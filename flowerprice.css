@@ -1,0 +1,131 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar {
+    background: linear-gradient(to bottom, #FFFBED 0%, #D1BB8F 5%);
+    border-bottom: 1px solid #D1BB8F;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+
+.navbar a,
+.navbar .fa {
+    color: black;
+}
+
+/* Поиск */
+.search-bar {
+    margin-left: auto;
+    padding: 5px;
+}
+
+
+.logo {
+    margin-right: 10px;
+}
+
+
+
+body {
+    font-family: 'EB Garamond', serif;
+    background: linear-gradient(to bottom, #FFFBED, #E5E4E3);
+    padding: 50px;
+}
+
+
+h1 {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.established {
+    font-style: italic;
+}
+
+h1, h2, p {
+    text-align: center;
+}
+
+.pricelist {
+    width: 80%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    max-width: 500px;
+}
+
+hr {
+    height: 2px;
+    background-color: #D1BB8F;
+    border-color: #D1BB8F;
+}
+
+.bottom-line {
+    margin-top: 25px;
+}
+
+h1, h2 {
+    font-family: EB Garamond, serif;
+}
+
+.item p {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.Flower_type {
+    text-align: left;
+    width: 75%;
+}
+
+.price {
+    text-align: right;
+    width: 25%;
+}
+
+
+
+footer {
+    font-size: 14px;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dashed-line {
+    margin-right: 500px;
+}
+
+.hover-image {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.text:hover + .hover-image {
+    display: block;
+}
+
+

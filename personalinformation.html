@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head class="WebContainer">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="personalinformation.css">
+
+    <!-- JavaScript -->
+    <script src="all.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="all.css">
+    <script src="fontawesome-free-X.X.X/js/all.min.js"></script>
+
+    <!-- Animation CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- JSON -->
+    <script src="data.json"></script>
+
+    <!-- Title -->
+    <title>PERSONAL INFORMATION</title>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="logo">
+        <a class="navbar-brand" href="main.html">
+            <i class="fa-solid fa-fan"></i> </a>
+    </div>
+
+    <form class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+
+    <div class="top-links">
+        <a href="PersonalInformation.html" target="_blank"><i class="fa-regular fa-user"></i></a>
+
+        <a href="basket.html" target="_blank"><i class="fa-solid fa-basket-shopping"></i></a>
+    </div>
+</nav>
+<br><br><br>
+
+<div id="time-container"></div>
+<script>
+
+    function formatTime(date) {
+        var hours = date.getHours().toString().padStart(2, '0');
+        var minutes = date.getMinutes().toString().padStart(2, '0');
+        var seconds = date.getSeconds().toString().padStart(2, '0');
+        return hours + ':' + minutes + ':' + seconds;
+    }
+
+
+    function updateTime() {
+        var currentTime = new Date();
+        var formattedTime = formatTime(currentTime);
+        document.getElementById('time-container').textContent = formattedTime;
+    }
+
+
+    updateTime();
+    setInterval(updateTime, 1000);
+</script>
+
+<!--heading-->
+<h3 align="center"><strong>Personal Information</strong></h3>
+<br><br>
+
+
+<form id="registrationForm">
+
+    <div class="registrationForm2">
+        <label for="title" class="form-label">Title- </label>
+        <span class="space"></span>
+        <input type="checkbox" id="mr" name="title" value="Mr.">
+        <label for="mr">Mr.</label>
+        <span class="space"></span>
+        <input type="checkbox" id="mrs" name="title" value="Mrs.">
+        <label for="mrs">Mrs.</label>
+        <span class="space"></span>
+        <input type="checkbox" id="ms" name="title" value="Ms.">
+        <label for="ms">Ms.</label>
+    </div>
+
+
+    <div class="registrationForm2">
+        <label for="firstName" class="form-label-inline">First Name</label>
+        <input type="text" class="form-control-inline" id="firstName" name="firstName" placeholder="Your first name">
+        <span class="space"></span>
+        <label for="lastName" class="form-label-inline">Last Name</label>
+        <input type="text" class="form-control-inline" id="lastName" name="lastName" placeholder="Your last name">
+    </div>
+
+    <div class="registrationForm2">
+        <label for="phone" class="form-label-inline">Phone</label>
+        <input type="tel" class="form-control-inline" id="phone" name="phone" placeholder="Your phone number">
+        <span class="space"></span>
+        <label for="email" class="form-label-inline">eMail</label>
+        <input type="email" class="form-control-inline" id="email" name="email" placeholder="Your fax email">
+        <span class="space"></span>
+        <label for="address" class="form-label-inline">Address</label>
+        <input type="address" class="form-control-inline" id="address" name="address" placeholder="Your address">
+    </div>
+
+    <div class="registrationForm2">
+        <label for="cards">Choose a payment method:</label>
+        <select name="cards" id="cards">
+            <optgroup label="Card Payment">
+                <option value="MasterCard">MasterCard</option>
+                <option value="Visa">Visa</option>
+            </optgroup>
+            <optgroup label="Apple Pay">
+                <option value="MasterCard">MasterCard</option>
+                <option value="Visa">Visa</option>
+            </optgroup>
+            <br>
+        </select>
+        <span class="space"></span>
+        <label for="cardnumber" class="form-label-inline">Card Number</label>
+        <input type="cardnumber" class="form-control-inline" id="cardnumber" name="cardnumber"
+               placeholder="Your card number"></div>
+    <br><br>
+
+    <div id="cart-items"></div>
+    <div>
+        <p id="overallPrice">Overall Price: </p>
+    </div>
+
+
+    <button type="submit" id="submitForm">Submit</button>
+</form>
+
+<form> <br><br><br><br>
+    <h5><strong>Other Contact Details</strong></h5>
+    <br>
+    <i class="fa-solid fa-envelope"></i> Email: flowershop@gmail.com <br>
+    <i class="fa-solid fa-phone"></i> Phone: +77771234567
+    <br>
+</form>
+
+<script src="personalinformation.js"></script>
+</body>
+
+</html>
+

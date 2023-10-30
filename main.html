@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang= " en">
+<head class="WebContainer">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="main.css">
+
+  <!-- JavaScript  -->
+  <script src="all.js"></script>
+
+  <!--    font awesome  -->
+  <link rel="stylesheet" href="all.css">
+  <script src="fontawesome-free-X.X.X/js/all.min.js"></script>
+
+  <!--      анимация css-->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!--      json-->
+  <script src="data.json"></script>
+
+  <!--      title-->
+  <title>FLOWER SHOP</title>
+</head>
+<body>
+
+
+<!--полоска-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="logo">
+    <a class="navbar-brand" href="main.html">
+      <i class="fa-solid fa-fan"></i> </a>
+  </div>
+
+  <form class="search-bar">
+    <input type="text" placeholder="Search...">
+    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+  </form>
+
+  <div class="top-links">
+    <a href="PersonalInformation.html" target="_blank"><i class="fa-regular fa-user"></i></a>
+
+    <a href="basket.html" target="_blank"><i class="fa-solid fa-basket-shopping"></i></a>
+  </div>
+</nav>
+<br><br><br>
+
+
+
+
+<!--    под полоской-->
+
+<div class="container2">
+  <div class="row">
+    <div class="col-md-6 pl-0 pr-0">
+      <div class="img-custom-size2">
+        <div class="d-flex align-items-center">
+          <img src="flowershop.jpg" class="img-custom-size2 border-custom mr-2" alt="about us">
+          <div class="word-container">
+            <span class="word" style="text-decoration: underline">HOME</span>
+            <a href="flowerprice.html" class="word flower-price">FLOWER PRICE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .img-custom-size2 {
+      display: flex;
+      align-items: center;
+      /*    width: 150px;*/
+      width: 70px;
+      /*    height: 150px;*/
+      height: 70px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-left: 30px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .word-container {
+      display: flex;
+      align-items: center;
+      margin-left: 50px;
+
+    }
+
+    .word {
+      margin-right: 5px;
+      white-space: nowrap;
+      color: black;
+    }
+    .flower-price{
+      margin-left: 900px;
+    }
+
+
+    .border-custom {
+      border: 2px solid black;
+    }
+  </style>
+
+
+
+
+
+
+
+  <!--cлайдшоу DOM AND JS-->
+  <div class="slideshow-container"></div>
+  <script src="main.js"></script>
+
+<!--  <div class="image-text"><strong>Blooming Beauty: Where Nature's Colors<br>Unfold</strong><br><button  id="scrollButton">DISCOVER NOW</button><div id="targetSection"></div></div>-->
+  <div class="image-text"><strong>Blooming Beauty: Where Nature's Colors<br>Unfold</strong><br><button  id="scrollButton">DISCOVER NOW</button><div ></div></div>
+  <style>.image-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .slide-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .image-text {
+    position: absolute;
+    top: 53%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    /* Дополнительные стили, если нужны */
+
+  }</style>
+
+
+
+  <!-- Текст и линия после слайдшоу -->
+  <div class="text-section">
+    <p>Flowers have been recognized for their therapeutic benefits. The practice of flower therapy, known as floral or flower essence therapy, involves using the essences of flowers to promote emotional well-being and restore balance. The scent of certain flowers, such as lavender and jasmine, is known to have a calming effect, reducing stress and anxiety.</p>
+  </div>
+
+  <div class="line"></div>
+
+
+  <!--    наша коллекция bootstrap css   -->
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js"></script>
+
+  <!--  JQUERY AND JS-->
+  <div id="targetSection" style="padding: 55px" style="position: absolute">
+    <h3><strong>Our Collection!</strong></h3>
+  </div>
+
+  <script>
+    document.getElementById("scrollButton").addEventListener("click", function() {
+      var targetSection = document.getElementById("targetSection");
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    });
+  </script>
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 pl-0 pr-15">
+        <div class="d-flex align-items-center">
+          <!--
+                  <img src="pictures/homeFlowers1.jpg" class="img-custom-size mr-4 mt-4 ml-0 mb-2" alt="Home Flower 1">
+                  <img src="pictures/homeFlowers2.jpg" class="img-custom-size mr-4 mt-4 ml-0 mb-2" alt="Home Flower 2">
+          -->
+          <img src="pictures/homeFlowers1.jpg" class="img-custom-size mr-4 mt-4 ml-0 mb-2 animate__animated animate__fadeIn" alt="Home Flower 1">
+          <img src="pictures/homeFlowers2.jpg" class="img-custom-size mr-4 mt-4 ml-0 mb-2 animate__animated animate__fadeIn" alt="Home Flower 2">
+
+
+
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="home-flowers-text ml-5 mt-4">
+          <a href="homeflowers.html" target="_blank" style="color: black"><h4><strong>Home Flowers</strong></h4><br></a>
+          <p style="text-align: left">Home flowers are a delightful addition to any living space, bringing a touch of nature and beauty indoors. Having home flowers not only adds beauty to your living space but also provides a sense of relaxation and connection with nature. They can brighten up a room, improve air quality, and even boost your mood. So why not bring a touch of nature indoors and enjoy the benefits that home flowers have to offer?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .img-custom-size {
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 15px;
+
+    }
+  </style>
+
+  <br><br><br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="home-flowers-text mt-3 ml-3">
+          <a href="bouquets.html" target="_blank" style="color: black"><h4><strong>Bouquets</strong></h4><br></a>
+          <p style="text-align: left">Bouquets are artistic arrangements of flowers and foliage carefully crafted to convey beauty, sentiment, and joy. Whether they are given as gifts or used for special occasions, bouquets have long been a symbol of celebration, love, and appreciation. If you encounter a bouquet, take a moment to appreciate the artistry and thoughtfulness behind it. And if you have the opportunity, gift someone a bouquet and witness the joy and beauty it brings to their life.</p>
+        </div>
+      </div>
+      <div class="col-md-6 pl-0 pr-0">
+        <div class="d-flex align-items-center">
+          <!--
+                  <img src="pictures/bouquets1.jpg" class="img-custom-size mr-4 mt-2 ml-0 mb-2" alt="Home Flower 1">
+                  <img src="pictures/bouquets2.jpg" class="img-custom-size mr-4 mt-2 ml-2 mb-2" alt="Home Flower 2">
+          -->
+          <img src="pictures/bouquets1.jpg" class="img-custom-size mr-4 mt-4 ml-0 mb-2 animate__animated animate__fadeIn" alt="Home Flower 1">
+          <img src="pictures/bouquets2.jpg" class="img-custom-size mr-4 mt-4 ml-0 mb-2 animate__animated animate__fadeIn" alt="Home Flower 2">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!--    ABOUT US-->
+  <br><br><br>
+  <div class="line"></div>
+
+
+
+
+
+  <div class="container3">
+    <div class="row">
+      <div class="col-md-6 pl-0 pr-0">
+        <div class="img-custom-size3">
+          <div class="d-flex align-items-center">
+            <img src="flowershop.jpg" class="img-custom-size3 border-custom mr-2" alt="about us">
+            <div class="word-container3">
+              <span class="word3 about-us"><h3><strong>About</strong></h3></span>
+              <span class="word3 about-us"><h3><strong>Us!</strong></h3></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .img-custom-size3 {
+      display: flex;
+      align-items: center;
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-left: 30px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .word-container3 {
+      display: flex;
+      align-items: center;
+      margin-left: 50px;
+    }
+
+    .word3 {
+      margin-right: 5px;
+    }
+
+    .border-custom {
+      border: 2px solid black;
+    }
+  </style>
+
+  <div class="container4" style="margin-left: 170px"><article style="margin-top: -70px">Our flower shop is nestled in the heart of Astana. comes to life at the onset of spring and diversity carefully selected, unique varieties of blooms take their turn to flourish through to late Autumn. Our season opens with ranunculus in September and ends with dahlias in April.<br>We grow these beautiful flowers to bring our local community the freshest, locally grown blooms to bring nature and joy into their homes and lives.</article>
+    <br><br>
+    <h3><strong>Contacts</strong></h3><br><p>Adress: Astana city, 8 Mangilik El st.</p>
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-whatsapp"></i><br></div>
+
+
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+</body>
+</html>

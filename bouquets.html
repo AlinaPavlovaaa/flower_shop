@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head class="WebContainer">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="homeflowers.css" />
+
+    <!-- font awesome JavaScript -->
+    <script src="all.js"></script>
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="all.css" />
+
+    <script src="fontawesome-free-X.X.X/js/all.min.js"></script>
+    <title>BOUQUETS</title>
+</head>
+<body>
+<!-- полоска -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="logo">
+        <a class="navbar-brand" href="main.html">
+            <i class="fa-solid fa-fan"></i>
+        </a>
+    </div>
+
+    <form class="search-bar">
+        <input type="text" placeholder="Search..." />
+        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+
+    <div class="top-links">
+        <a href="PersonalInformation.html" target="_blank"><i class="fa-regular fa-user"></i></a>
+
+        <a href="basket.html" target="_blank"><i class="fa-solid fa-basket-shopping"></i></a>
+    </div>
+</nav>
+
+<h3><strong>Bouquets</strong></h3>
+
+<div>
+    <button id="clearCart" style="margin-bottom: auto">Clear Cart</button>
+</div>
+<div>
+    <p id="overallPrice" style="color: #FFFBED">Overall Price: </p>
+</div>
+
+<section>
+    <div class="image-row">
+        <div class="image-container">
+            <div class="image"><img src="pictures/PetiteWrappedFlowers.jpg" alt="Image 1" /></div>
+            <div class="text">Petite Wrapped Flowers</div>
+            <div class="price">16990&#8376;</div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="image-container">
+            <div class="image"><img src="pictures/ClassicDriedFlowerWrap.jpg" alt="Image 2" /></div>
+            <div class="text">Classic Dried Flower Wrap</div>
+            <div class="price">19990&#8376;</div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="image-container">
+            <div class="image"><img src="pictures/GrandLocally-GrownFlowerWrap.jpg" alt="Image 3" /></div>
+            <div class="text">Grand Locally-Grown Flower Wrap</div>
+            <div class="price">56550&#8376;</div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="image-row">
+        <div class="image-container">
+            <div class="image"><img src="pictures/GrandWrappedFlowers.jpg" alt="Image 1" /></div>
+            <div class="text">Grand Wrapped Flowers</div>
+            <div class="price">49990&#8376;</div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="image-container">
+            <div class="image"><img src="pictures/ExtraWrappedFlowers.jpg" alt="Image 2" /></div>
+            <div class="text">Extra Wrapped Flowers</div>
+            <div class="price">69990&#8376;</div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="image-container">
+            <div class="image"><img src="pictures/PopsPetalsFathersDayFlowerWrap.jpg" alt="Image 3" /></div>
+            <div class="text">Pop's Petals - Father's Day Flower Wrap</div>
+            <div class="price">39990&#8376;</div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+<script>
+
+    function calculateOverallPrice(cartItems) {
+        var overallPrice = 0;
+        cartItems.forEach(function(item) {
+            if (item.price !== undefined) {
+                var price = parseFloat(item.price.replace( ''));
+                overallPrice += price;
+            }
+        });
+        return overallPrice.toFixed(2);
+    }
+
+
+    function clearCart() {
+        localStorage.removeItem('cartItems');
+        location.reload();
+    }
+
+
+    function addToCart(item) {
+        var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+
+        var isItemInCart = cartItems.some(function(cartItem) {
+            return (
+                cartItem.name === item.name &&
+                cartItem.price === item.price
+            );
+        });
+
+
+        if (!isItemInCart && item.name !== undefined && item.price !== undefined) {
+            cartItems.push(item);
+
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+
+        var cartItemsContainer = document.getElementById('cart-items');
+        var overallPriceElement = document.getElementById('overallPrice');
+
+        if (cartItems.length === 0) {
+            cartItemsContainer.innerHTML = '<p>The basket is empty.</p>';
+        } else {
+            var itemList = document.createElement('ul');
+            var overallPrice = calculateOverallPrice(cartItems);
+            cartItems.forEach(function(item) {
+
+                if (item.name !== undefined && item.price !== undefined) {
+                    var listItem = document.createElement('li');
+                    listItem.textContent = item.name + ' - ' + item.price;
+                    itemList.appendChild(listItem);
+                }
+            });
+            cartItemsContainer.appendChild(itemList);
+            overallPriceElement.textContent = 'Overall Price: ' + overallPrice + ' tg';
+        }
+    });
+
+
+    var clearCartButton = document.getElementById('clearCart');
+    clearCartButton.addEventListener('click', clearCart);
+
+
+    var addToCartButtons = document.getElementsByClassName('add-to-cart-btn');
+    for (var i = 0; i < addToCartButtons.length; i++) {
+        var button = addToCartButtons[i];
+        button.addEventListener('click', function(event) {
+            var parentContainer = event.target.parentNode;
+            var name = parentContainer.querySelector('.text').textContent;
+            var price = parentContainer.querySelector('.price').textContent;
+            var selectedItem = {
+                name: name,
+                price: price
+            };
+            addToCart(selectedItem);
+        });
+    }
+</script>
+
+</body>
+</html>
